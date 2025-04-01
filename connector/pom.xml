@@ -10,7 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>nebula-flink-connector</artifactId>
+    <artifactId>nebula-flink-connector-revision</artifactId>
 
     <properties>
         <nebula.version>3.0.0</nebula.version>
@@ -28,6 +28,18 @@
             <groupId>com.vesoft</groupId>
             <artifactId>client</artifactId>
             <version>${nebula.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.bouncycastle</groupId>
+                    <artifactId>bcpkix-jdk15on</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcpkix-jdk15on</artifactId>
+            <version>1.64</version> <!-- 使用与 JDK 8 兼容的版本 -->
         </dependency>
 
         <!-- flink dependency -->
@@ -141,7 +153,8 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.2.0</version>
+<!--                <version>3.2.0</version>-->
+                <version>3.5.0</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -216,6 +229,20 @@
                         </goals>
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <relocations>
+                                <relocation>
+                                    <pattern>com.google.common</pattern>
+                                    <shadedPattern>shaded.com.google.common</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>javax.servlet</pattern>
+                                    <shadedPattern>shaded.javax.servlet</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.apache.commons</pattern>
+                                    <shadedPattern>shaded.org.apache.commons</shadedPattern>
+                                </relocation>
+                            </relocations>
                             <artifactSet>
                                 <excludes>
                                     <exclude>org.apache.spark:*</exclude>

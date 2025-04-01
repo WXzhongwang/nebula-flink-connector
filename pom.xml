@@ -47,14 +47,12 @@
 
     <distributionManagement>
         <repository>
-            <id>ossrh</id>
-            <name>Nexus Release Repository</name>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+            <id>private-releases</id>
+            <url>https://packages.aliyun.com/maven/repository/2470424-release-mtB7Nz</url>
         </repository>
         <snapshotRepository>
-            <id>ossrh</id>
-            <name>Nexus Snapshot Repository</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <id>private-snapshots</id>
+            <url>https://packages.aliyun.com/maven/repository/2470424-snapshot-M3PWj7</url>
         </snapshotRepository>
     </distributionManagement>
 

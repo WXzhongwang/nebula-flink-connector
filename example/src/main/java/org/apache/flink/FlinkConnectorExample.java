@@ -160,7 +160,7 @@ public class FlinkConnectorExample {
                         .setExecutionOptions(executionOptions);
         NebulaSinkFunction nebulaSinkFunction = new NebulaSinkFunction(outPutFormat);
         DataStream<Row> dataStream = playerSource.map(row -> {
-            org.apache.flink.types.Row record = new org.apache.flink.types.Row(row.size());
+            Row record = new Row(row.size());
             for (int i = 0; i < row.size(); i++) {
                 record.setField(i, row.get(i));
             }
@@ -201,7 +201,7 @@ public class FlinkConnectorExample {
                         .setExecutionOptions(executionOptions);
         NebulaSinkFunction nebulaSinkFunction = new NebulaSinkFunction(outPutFormat);
         DataStream<Row> dataStream = playerSource.map(row -> {
-            org.apache.flink.types.Row record = new org.apache.flink.types.Row(row.size());
+            Row record = new Row(row.size());
             for (int i = 0; i < row.size(); i++) {
                 record.setField(i, row.get(i));
             }
@@ -242,7 +242,7 @@ public class FlinkConnectorExample {
                         .setExecutionOptions(executionOptions);
         NebulaSinkFunction nebulaSinkFunction = new NebulaSinkFunction(outPutFormat);
         DataStream<Row> dataStream = playerSource.map(row -> {
-            org.apache.flink.types.Row record = new org.apache.flink.types.Row(row.size());
+            Row record = new Row(row.size());
             for (int i = 0; i < row.size(); i++) {
                 record.setField(i, row.get(i));
             }
@@ -328,7 +328,7 @@ public class FlinkConnectorExample {
                         .setExecutionOptions(executionOptions);
         NebulaSinkFunction nebulaSinkFunction = new NebulaSinkFunction(outPutFormat);
         DataStream<Row> dataStream = playerSource.map(row -> {
-            org.apache.flink.types.Row record = new org.apache.flink.types.Row(row.size());
+            Row record = new Row(row.size());
             for (int i = 0; i < row.size(); i++) {
                 record.setField(i, row.get(i));
             }
@@ -371,7 +371,7 @@ public class FlinkConnectorExample {
                         .setExecutionOptions(executionOptions);
         NebulaSinkFunction nebulaSinkFunction = new NebulaSinkFunction(outPutFormat);
         DataStream<Row> dataStream = playerSource.map(row -> {
-            org.apache.flink.types.Row record = new org.apache.flink.types.Row(row.size());
+            Row record = new Row(row.size());
             for (int i = 0; i < row.size(); i++) {
                 record.setField(i, row.get(i));
             }
@@ -415,7 +415,7 @@ public class FlinkConnectorExample {
                         .setExecutionOptions(executionOptions);
         NebulaSinkFunction nebulaSinkFunction = new NebulaSinkFunction(outPutFormat);
         DataStream<Row> dataStream = playerSource.map(row -> {
-            org.apache.flink.types.Row record = new org.apache.flink.types.Row(row.size());
+            Row record = new Row(row.size());
             for (int i = 0; i < row.size(); i++) {
                 record.setField(i, row.get(i));
             }
